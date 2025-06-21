@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      background: #001f3f;
+      background: seagreen;
       color: #ffffff;
       font-family: 'Arial', sans-serif;
     }
@@ -55,11 +55,17 @@
     <p><strong>Commodore's Picnic</strong> – Saturday August 9th</p>
   </div>
 
-  <div class="slide">
-    <h1>Live Weather Radar</h1>
-    <iframe src="https://www.rainviewer.com/map.html?loc=43.3,-78.8,8&oFa=0&oC=0&oU=0&oCS=1&oF=0&oAP=0&c=0&o=83&lm=1&layer=radar&sm=1&sn=1" title="RainViewer Radar"></iframe>
-    <p>Real-time radar centered on Lake Ontario</p>
-  </div>
+ <div class="slide">
+  <h1>Live Weather Radar – Wilson, NY</h1>
+  <iframe
+    src="https://www.rainviewer.com/map.html?loc=43.3,-78.8,8&oFa=0&oC=0&oU=0&oCS=1&oF=0&oAP=0&c=0&o=83&lm=1&layer=radar&sm=1&sn=1"
+    width="100%"
+    height="80%"
+    frameborder="0"
+    style="border-radius: 10px;">
+  </iframe>
+  <p>Real-time radar powered by RainViewer</p>
+</div>
 
   <script>
     const slides = document.querySelectorAll('.slide');

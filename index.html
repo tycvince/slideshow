@@ -76,6 +76,15 @@
     }
   </style>
 
+<div class="slide" style="padding:0; margin:0; height:100vh;">
+  <style>
+    html, body, .slide, #map {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -92,7 +101,6 @@
 
     const api = new RainViewer({
       map: map,
-      position: 'bottomright',
       animationInterval: 500,
       opacity: 0.6,
       colorScheme: 3,

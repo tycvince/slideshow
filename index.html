@@ -76,12 +76,15 @@
     }
   </style>
 
-<div class="slide" style="padding:0; margin:0; height:100vh;">
+<div class="slide" style="padding:0; margin:0;">
   <style>
     html, body, .slide, #map {
       height: 100vh;
       margin: 0;
       padding: 0;
+    }
+    #map {
+      width: 100%;
     }
   </style>
 
@@ -90,26 +93,28 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://rainviewer.com/js/rainviewer.min.js"></script>
   <script>
-    const map = L.map('map', {
-      zoomControl: false,
-      attributionControl: false
-    }).setView([43.3, -78.8], 8);
+    document.addEventListener("DOMContentLoaded", function () {
+      const map = L.map('map', {
+        zoomControl: false,
+        attributionControl: false
+      }).setView([43.3, -78.8], 8);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: ''
-    }).addTo(map);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: ''
+      }).addTo(map);
 
-    const api = new RainViewer({
-      map: map,
-      animationInterval: 500,
-      opacity: 0.6,
-      colorScheme: 3,
-      smoothData: true,
-      snowColors: false
+      const api = new RainViewer({
+        map: map,
+        animationInterval: 500,
+        opacity: 0.6,
+        colorScheme: 3,
+        smoothData: true,
+        snowColors: false
+      });
+
+      api.showFrame(api.getFrameCount() - 1);
+      api.play();
     });
-
-    api.showFrame(api.getFrameCount() - 1);
-    api.play();
   </script>
 </div>
   

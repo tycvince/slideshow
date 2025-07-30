@@ -133,6 +133,26 @@ c<!DOCTYPE html>
     <p>Sun   31  @ 2:00p-6:00p George Petitt</p>
   </div>
 </div>
+<script>
+  const scrollBox = document.getElementById('autoScrollBox');
+  let scrollSpeed = 0.5; // pixels per frame
+  let scrollInterval;
+
+  function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+      if (scrollBox.scrollTop + scrollBox.clientHeight >= scrollBox.scrollHeight) {
+        scrollBox.scrollTop = 0; // reset to top when bottom reached
+      } else {
+        scrollBox.scrollTop += scrollSpeed;
+      }
+    }, 16); // ~60fps
+  }
+
+  // Start scrolling after slight delay to allow layout to settle
+  window.addEventListener('load', () => {
+    setTimeout(startAutoScroll, 500);
+  });
+</script>
 
 
   

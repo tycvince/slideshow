@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
   <head>
   <meta charset="UTF-8" />
@@ -107,7 +107,7 @@
 
 </div>  
 
-<div class="slide scrollable-slide" data-duration="4000" style="position: relative; padding: 60px 40px; font-size: 28px; height: 100vh; overflow: hidden;">
+<div class="slide scrollable-slide" data-duration="14000" style="position: relative; padding: 60px 40px; font-size: 28px; height: 100vh; overflow: hidden;">
   <!-- Top-left logo -->
   <img src="burgee.png" alt="TYC Logo Left"
        style="position: absolute; top: 20px; left: 20px; width: 80px; height: auto;" />
@@ -154,7 +154,7 @@
 </div>
 <script>
   const scrollBox = document.getElementById('autoScrollBox');
-  let scrollSpeed = 1.9; // pixels per frame
+  let scrollSpeed = .9; // pixels per frame
   let scrollInterval;
 
   function startAutoScroll() {
@@ -267,7 +267,7 @@
   
 
   
-<div class="slide" data-duration="15000">
+<div class="slide" data-duration="20000">
   <img id="radar" src="https://s.w-x.co/staticmaps/wu/wxtype/county_loc/bgm/animate.png" alt="Weather Radar">
 </div>
 
@@ -294,7 +294,7 @@
           const baseSrc = radar.src.split("?")[0];
           radar.src = `${baseSrc}?t=${new Date().getTime()}`;
           count++;
-        }, 750); // Spread out refreshes over 3 seconds (4 x 750ms)
+        }, 5000); // Spread out refreshes over 3 seconds (4 x 750ms)
       }
     });
 

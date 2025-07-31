@@ -1,4 +1,4 @@
-c<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
   <meta charset="UTF-8" />
@@ -277,20 +277,40 @@ c<!DOCTYPE html>
   <p>Looping radar from NOAA/NWS</p>
 </div>
 
-<div class="slide">
+<div class="slide" data-duration="3000">
+    <img src="https://s.w-x.co/staticmaps/wu/wxtype/county_loc/bgm/animate.png" alt="Weather Radar">
+</div>
+  <div class="slide" data-duration="3000">
+    <img src="https://s.w-x.co/staticmaps/wu/wxtype/county_loc/bgm/animate.png" alt="Weather Radar">
+</div>
+  <div class="slide" data-duration="3000">
+    <img src="https://s.w-x.co/staticmaps/wu/wxtype/county_loc/bgm/animate.png" alt="Weather Radar">
+</div>
+  <div class="slide" data-duration="3000">
     <img src="https://s.w-x.co/staticmaps/wu/wxtype/county_loc/bgm/animate.png" alt="Weather Radar">
 </div>
 
   
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let index = 0;
-    setInterval(() => {
-      slides[index].classList.remove('active');
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, j) => {
+      slide.classList.toggle('active', j === i);
+    });
+
+    const duration = parseInt(slides[i].dataset.duration) || 10000;
+
+    setTimeout(() => {
       index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 10000); // rotate every 10 seconds
-  </script>
+      showSlide(index);
+    }, duration);
+  }
+
+  window.onload = () => showSlide(index);
+</script>
+
 </body>
 </html>
 
